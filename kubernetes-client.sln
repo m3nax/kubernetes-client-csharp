@@ -69,7 +69,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "openTelemetryConsole", "exa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webApiDependencyInjection", "examples\webApiDependencyInjection\webApiDependencyInjection.csproj", "{C0759F88-A010-4DEF-BD3B-E183D3328FFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KubernetesClient.Extensions.Hosting", "KubernetesClient.Extensions.Hosting\KubernetesClient.Extensions.Hosting.csproj", "{92BA5E61-C21E-4A8E-A804-91F44C880875}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KubernetesClient.Extensions.Hosting", "src\KubernetesClient.Extensions.Hosting\KubernetesClient.Extensions.Hosting.csproj", "{92BA5E61-C21E-4A8E-A804-91F44C880875}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
