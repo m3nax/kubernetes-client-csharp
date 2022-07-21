@@ -69,7 +69,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "openTelemetryConsole", "exa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webApiDependencyInjection", "examples\webApiDependencyInjection\webApiDependencyInjection.csproj", "{C0759F88-A010-4DEF-BD3B-E183D3328FFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KubernetesClient.Extensions.Hosting", "src\KubernetesClient.Extensions.Hosting\KubernetesClient.Extensions.Hosting.csproj", "{92BA5E61-C21E-4A8E-A804-91F44C880875}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KubernetesClient.Extensions.Hosting", "src\KubernetesClient.Extensions.Hosting\KubernetesClient.Extensions.Hosting.csproj", "{92BA5E61-C21E-4A8E-A804-91F44C880875}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KubernetesClient.Extensions.Hosting", "tests\KubernetesClient.Extensions.Hosting\KubernetesClient.Extensions.Hosting.csproj", "{98704008-9EED-4B3B-97AF-470EF8B7B1EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -453,6 +455,18 @@ Global
 		{92BA5E61-C21E-4A8E-A804-91F44C880875}.Release|x64.Build.0 = Release|Any CPU
 		{92BA5E61-C21E-4A8E-A804-91F44C880875}.Release|x86.ActiveCfg = Release|Any CPU
 		{92BA5E61-C21E-4A8E-A804-91F44C880875}.Release|x86.Build.0 = Release|Any CPU
+		{98704008-9EED-4B3B-97AF-470EF8B7B1EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98704008-9EED-4B3B-97AF-470EF8B7B1EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98704008-9EED-4B3B-97AF-470EF8B7B1EE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{98704008-9EED-4B3B-97AF-470EF8B7B1EE}.Debug|x64.Build.0 = Debug|Any CPU
+		{98704008-9EED-4B3B-97AF-470EF8B7B1EE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{98704008-9EED-4B3B-97AF-470EF8B7B1EE}.Debug|x86.Build.0 = Debug|Any CPU
+		{98704008-9EED-4B3B-97AF-470EF8B7B1EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98704008-9EED-4B3B-97AF-470EF8B7B1EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98704008-9EED-4B3B-97AF-470EF8B7B1EE}.Release|x64.ActiveCfg = Release|Any CPU
+		{98704008-9EED-4B3B-97AF-470EF8B7B1EE}.Release|x64.Build.0 = Release|Any CPU
+		{98704008-9EED-4B3B-97AF-470EF8B7B1EE}.Release|x86.ActiveCfg = Release|Any CPU
+		{98704008-9EED-4B3B-97AF-470EF8B7B1EE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -489,6 +503,7 @@ Global
 		{8E266190-AE6E-44A8-948D-BD974AA82428} = {B70AFB57-57C9-46DC-84BE-11B7DDD34B40}
 		{C0759F88-A010-4DEF-BD3B-E183D3328FFC} = {B70AFB57-57C9-46DC-84BE-11B7DDD34B40}
 		{92BA5E61-C21E-4A8E-A804-91F44C880875} = {3D1864AA-1FFC-4512-BB13-46055E410F73}
+		{98704008-9EED-4B3B-97AF-470EF8B7B1EE} = {8AF4A5C2-F0CE-47D5-A4C5-FE4AB83CA509}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {049A763A-C891-4E8D-80CF-89DD3E22ADC7}
