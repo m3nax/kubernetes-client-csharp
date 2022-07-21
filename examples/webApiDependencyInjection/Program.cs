@@ -1,12 +1,19 @@
-using k8s;
+using KubernetesClient.Extensions.Hosting.Alpha;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddKubernetesClient((builder) =>
+{
+    builder.FromConfigFile();
+    builder.UseContext("contextName");
+    builder.WithMasterUrl("192.168.0.10");
+});
+
 // Load kubernetes configuration
-var kubernetesClientConfig = KubernetesClientConfiguration.BuildDefaultConfig();
+//var kubernetesClientConfig = KubernetesClientConfiguration.BuildDefaultConfig();
 
 // Register Kubernetes client interface as sigleton
-builder.Services.AddSingleton<IKubernetes>(new Kubernetes(kubernetesClientConfig));
+//builder.Services.AddSingleton<IKubernetes>(new Kubernetes(kubernetesClientConfig));
 
 // Add services to the container.
 builder.Services.AddEndpointsApiExplorer();
