@@ -1,6 +1,309 @@
-# EditorConfig is awesome: http://EditorConfig.org
+# NOTE: Requires **VS2019 16.3** or later
 
-# top-most EditorConfig file
+# kubernetes-client
+# Description: kubernetes-client.ruleset
+
+# Code files
+[*.{cs,vb}]
+
+# Mark attributes with AttributeUsageAttribute https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1018
+dotnet_diagnostic.CA1018.severity = warning
+
+# Enum storage should be Int32 https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1028
+dotnet_diagnostic.CA1028.severity = warning
+
+# Do not catch general exception types https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1031
+dotnet_diagnostic.CA1031.severity = none
+
+# Nested types should not be visible https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1034
+dotnet_diagnostic.CA1034.severity = none
+
+# Do not declare visible instance fields https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1051
+dotnet_diagnostic.CA1051.severity = warning
+
+# Static holder types should be Static or NotInheritable https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1052
+dotnet_diagnostic.CA1052.severity = none
+
+# URI parameters should not be strings https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1054
+dotnet_diagnostic.CA1054.severity = none
+
+# Validate arguments of public methods https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1062
+dotnet_diagnostic.CA1062.severity = warning
+
+# Implement IDisposable correctly https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1063
+dotnet_diagnostic.CA1063.severity = error
+
+# Do not pass literals as localized parameters https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1303
+dotnet_diagnostic.CA1303.severity = none
+
+# Specify CultureInfo https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1304
+dotnet_diagnostic.CA1304.severity = none
+
+# Specify IFormatProvider https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1305
+dotnet_diagnostic.CA1305.severity = none
+
+# Specify StringComparison https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1307
+dotnet_diagnostic.CA1307.severity = none
+
+# Normalize strings to uppercase https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1308
+dotnet_diagnostic.CA1308.severity = none
+
+# Identifiers should not contain underscores https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1707
+dotnet_diagnostic.CA1707.severity = error
+
+# Identifiers should have correct prefix https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1715
+dotnet_diagnostic.CA1715.severity = none
+
+# Identifiers should not match keywords https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1716
+dotnet_diagnostic.CA1716.severity = none
+
+# Identifiers should not contain type names https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1720
+dotnet_diagnostic.CA1720.severity = none
+
+# Rename k8s.Extensions type to mitigate conflict with Microsoft.Extensions namespace https://github.com/kubernetes-client/csharp/pull/544#issuecomment-759230655
+dotnet_diagnostic.CA1724.severity = none
+
+# Review unused parameters https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1801
+dotnet_diagnostic.CA1801.severity = none
+
+# Use Literals Where Appropriate https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1802
+dotnet_diagnostic.CA1802.severity = error
+
+# Avoid uninstantiated internal classes https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1812
+dotnet_diagnostic.CA1812.severity = error
+
+# Call GC.SuppressFinalize correctly https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1816
+dotnet_diagnostic.CA1816.severity = error
+
+# Mark members as static https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1822
+dotnet_diagnostic.CA1822.severity = none
+
+# Avoid zero-length array allocations https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1825
+dotnet_diagnostic.CA1825.severity = none
+
+# Do not use Count/LongCount when Any can be used https://docs.microsoft.com/en-us/visualstudio/code-quality/CA1827
+dotnet_diagnostic.CA1827.severity = error
+
+# TODO only in netcore2.1+
+dotnet_diagnostic.CA1835.severity = suggestion
+
+# Dispose objects before losing scope https://docs.microsoft.com/en-us/visualstudio/code-quality/CA2000
+# TODO
+dotnet_diagnostic.CA2000.severity = none
+
+# Do not directly await a Task https://docs.microsoft.com/en-us/visualstudio/code-quality/CA2007
+dotnet_diagnostic.CA2007.severity = error
+
+# Do not create tasks without passing a TaskScheduler https://docs.microsoft.com/en-us/visualstudio/code-quality/CA2008
+# TODO
+dotnet_diagnostic.CA2008.severity = none
+
+# Rethrow to preserve stack details https://docs.microsoft.com/en-us/visualstudio/code-quality/CA2200
+dotnet_diagnostic.CA2200.severity = warning
+
+# Disposable fields should be disposed https://docs.microsoft.com/en-us/visualstudio/code-quality/CA2213
+dotnet_diagnostic.CA2213.severity = warning
+
+# Operator overloads have named alternates https://docs.microsoft.com/en-us/visualstudio/code-quality/CA2225
+dotnet_diagnostic.CA2225.severity = none
+
+# Collection properties should be read only https://docs.microsoft.com/en-us/visualstudio/code-quality/CA2227
+dotnet_diagnostic.CA2227.severity = none
+
+# Mark ISerializable types with SerializableAttribute https://docs.microsoft.com/en-us/visualstudio/code-quality/CA2237
+dotnet_diagnostic.CA2237.severity = none
+
+# Do Not Disable Certificate Validation https://docs.microsoft.com/en-us/visualstudio/code-quality/CA5359
+dotnet_diagnostic.CA5359.severity = none
+
+dotnet_diagnostic.CS1573.severity = none
+
+dotnet_diagnostic.CS1574.severity = none
+
+# TODO missing doc
+dotnet_diagnostic.CS1591.severity = none
+
+# All diagnostics of XML documentation comments has been disabled due to the current project configuration. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA0001.md
+dotnet_diagnostic.SA0001.severity = none
+
+# The spacing around a comma is incorrect, within a C# code file. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1001.md
+dotnet_diagnostic.SA1001.severity = warning
+
+# A closing parenthesis within a C# statement is not spaced correctly. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1009.md
+dotnet_diagnostic.SA1009.severity = none
+
+# An opening brace within a C# element is not spaced correctly. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1012.md
+dotnet_diagnostic.SA1012.severity = warning
+
+# The code contains a tab or space character which is not consistent with the current project settings. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1027.md
+dotnet_diagnostic.SA1027.severity = error
+
+# A line of code ends with a space, tab, or other whitespace characters before the end of line character(s). https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1028.md
+dotnet_diagnostic.SA1028.severity = warning
+
+# A call to an instance member of the local class or a base class is not prefixed with 'this.', within a C# code file. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1101.md
+dotnet_diagnostic.SA1101.severity = none
+
+# A C# statement contains a comment between the declaration of the statement and the opening brace of the statement. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1108.md
+dotnet_diagnostic.SA1108.severity = error
+
+# A comma between two parameters in a call to a C# method or indexer, or in the declaration of a method or indexer, is not placed on the same line as the previous parameter. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1113.md
+dotnet_diagnostic.SA1113.severity = warning
+
+# The parameters to a C# method or indexer call or declaration span across multiple lines, but the first parameter does not start on the line after the opening bracket. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1116.md
+dotnet_diagnostic.SA1116.severity = warning
+
+# The parameters to a C# method or indexer call or declaration are not all on the same line or each on a separate line. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1117.md
+dotnet_diagnostic.SA1117.severity = none
+
+# A parameter to a C# method or indexer, other than the first parameter, spans across multiple lines. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1118.md
+dotnet_diagnostic.SA1118.severity = warning
+
+# A C# statement contains parenthesis which are unnecessary and should be removed. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1119.md
+dotnet_diagnostic.SA1119.severity = none
+
+# The C# comment does not contain any comment text. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1120.md
+dotnet_diagnostic.SA1120.severity = none
+
+# The code uses one of the basic C# types, but does not use the built-in alias for the type. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1121.md
+dotnet_diagnostic.SA1121.severity = warning
+
+# The C# code includes an empty string, written as `""`. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1122.md
+dotnet_diagnostic.SA1122.severity = none
+
+# The C# code contains a region. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1124.md
+dotnet_diagnostic.SA1124.severity = error
+
+# A generic constraint on a type or method declaration is on the same line as the declaration, within a C# code file. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1127.md
+dotnet_diagnostic.SA1127.severity = warning
+
+# A constructor initializer is on the same line as the constructor declaration, within a C# code file. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1128.md
+dotnet_diagnostic.SA1128.severity = warning
+
+# A comparison was made between a variable and a literal or constant value, and the variable appeared on the right-hand side of the expression. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1131.md
+dotnet_diagnostic.SA1131.severity = error
+
+# An attribute is placed on the same line of code as another attribute or element. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1134.md
+dotnet_diagnostic.SA1134.severity = warning
+
+# A C# using directive is placed outside of a namespace element. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1200.md
+dotnet_diagnostic.SA1200.severity = error
+
+# An element within a C# code file is out of order in relation to the other elements in the code. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1201.md
+dotnet_diagnostic.SA1201.severity = none
+
+# An element within a C# code file is out of order within regard to access level, in relation to other elements in the code. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1202.md
+dotnet_diagnostic.SA1202.severity = none
+
+# A constant field is placed beneath a non-constant field. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1203.md
+dotnet_diagnostic.SA1203.severity = none
+
+# A static element is positioned beneath an instance element of the same type. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1204.md
+dotnet_diagnostic.SA1204.severity = none
+
+# The keywords within the declaration of an element do not follow a standard ordering scheme. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1206.md
+dotnet_diagnostic.SA1206.severity = none
+
+# The using directives within a C# code file are not sorted alphabetically by namespace. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1210.md
+dotnet_diagnostic.SA1210.severity = none
+
+# A readonly field is positioned beneath a non-readonly field. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1214.md
+dotnet_diagnostic.SA1214.severity = none
+
+# The name of a C# element does not begin with an upper-case letter. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1300.md
+dotnet_diagnostic.SA1300.severity = none
+
+# The name of a field in C# does not begin with a lower-case letter. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1306.md
+dotnet_diagnostic.SA1306.severity = error
+
+# A field name in C# begins with an underscore. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1309.md
+dotnet_diagnostic.SA1309.severity = none
+
+# The name of a variable in C# does not begin with a lower-case letter. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1312.md
+dotnet_diagnostic.SA1312.severity = error
+
+# The name of a C# type parameter does not begin with the capital letter T. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1314.md
+dotnet_diagnostic.SA1314.severity = none
+
+# The access modifier for a C# element has not been explicitly defined. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1400.md
+dotnet_diagnostic.SA1400.severity = error
+
+# A field within a C# class has an access modifier other than private. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1401.md
+dotnet_diagnostic.SA1401.severity = error
+
+# A C# code file contains more than one unique type. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1402.md
+dotnet_diagnostic.SA1402.severity = error
+
+# A call to Debug.Assert in C# code does not include a descriptive message. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1405.md
+dotnet_diagnostic.SA1405.severity = none
+
+# The last statement in a multi-line C# initializer or list is missing a trailing comma. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1413.md
+dotnet_diagnostic.SA1413.severity = error
+
+# The opening or closing brace within a C# statement, element, or expression is not placed on its own line. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1500.md
+dotnet_diagnostic.SA1500.severity = error
+
+# The C# code contains multiple blank lines in a row. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1507.md
+dotnet_diagnostic.SA1507.severity = none
+
+# An opening brace within a C# element, statement, or expression is preceded by a blank line. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1509.md
+dotnet_diagnostic.SA1509.severity = warning
+
+# A single-line comment within C# code is followed by a blank line. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1512.md
+dotnet_diagnostic.SA1512.severity = none
+
+# A closing brace within a C# element, statement, or expression is not followed by a blank line. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1513.md
+dotnet_diagnostic.SA1513.severity = error
+
+# A single-line comment within C# code is not preceded by a blank line. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1515.md
+dotnet_diagnostic.SA1515.severity = none
+
+# Adjacent C# elements are not separated by a blank line. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1516.md
+dotnet_diagnostic.SA1516.severity = none
+
+# A C# code element is missing a documentation header. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1600.md
+dotnet_diagnostic.SA1600.severity = none
+
+# A C# partial element is missing a documentation header. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1601.md
+dotnet_diagnostic.SA1601.severity = none
+
+# An item within a C# enumeration is missing an Xml documentation header. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1602.md
+dotnet_diagnostic.SA1602.severity = warning
+
+# A C# method, constructor, delegate or indexer element is missing documentation for one or more of its parameters. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1611.md
+dotnet_diagnostic.SA1611.severity = warning
+
+# The documentation describing the parameters to a C# method, constructor, delegate or indexer element does not match the actual parameters on the element. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1612.md
+dotnet_diagnostic.SA1612.severity = warning
+
+# A C# element is missing documentation for its return value. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1615.md
+dotnet_diagnostic.SA1615.severity = warning
+
+# A generic C# element is missing documentation for one or more of its generic type parameters. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1618.md
+dotnet_diagnostic.SA1618.severity = warning
+
+# A `<typeparam>` tag within the Xml header documentation for a generic C# element is empty. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1622.md
+dotnet_diagnostic.SA1622.severity = warning
+
+# The documentation text within a C# property's `<summary>` tag does not match the accessors within the property. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1623.md
+dotnet_diagnostic.SA1623.severity = none
+
+# The Xml documentation for a C# element contains two or more identical entries, indicating that the documentation has been copied and pasted. This can sometimes indicate invalid or poorly written documentation. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1625.md
+dotnet_diagnostic.SA1625.severity = warning
+
+# A section of the Xml header documentation for a C# element does not end with a period (also known as a full stop). https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1629.md
+dotnet_diagnostic.SA1629.severity = none
+
+# A C# code file is missing a standard file header. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1633.md
+dotnet_diagnostic.SA1633.severity = none
+
+# The XML documentation header for a C# constructor does not contain the appropriate summary text. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1642.md
+dotnet_diagnostic.SA1642.severity = warning
+
+# The file name of a C# code file does not match the first type declared in the file. https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1649.md
+dotnet_diagnostic.SA1649.severity = error
+
+# top-most EditorConfig file (original .editorconfig)
 root = true
 
 [*]
