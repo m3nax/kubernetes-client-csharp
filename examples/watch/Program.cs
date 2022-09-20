@@ -15,7 +15,8 @@ namespace watch
             IKubernetes client = new Kubernetes(config);
 
             var podlistResp = client.CoreV1.ListNamespacedPodWithHttpMessagesAsync("default", watch: true);
-            // C# 8 required https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/november/csharp-iterating-with-async-enumerables-in-csharp-8
+
+            // With C# 8 or greater https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/november/csharp-iterating-with-async-enumerables-in-csharp-8
             await foreach (var (type, item) in podlistResp.WatchAsync<V1Pod, V1PodList>())
             {
                 Console.WriteLine("==on watch event==");
@@ -24,8 +25,8 @@ namespace watch
                 Console.WriteLine("==on watch event==");
             }
 
-            // uncomment if you prefer callback api
-            // WatchUsingCallback(client);
+            // With legancy callback api
+            WatchUsingCallback(client);
         }
 
         private static void WatchUsingCallback(IKubernetes client)

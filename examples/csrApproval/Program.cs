@@ -1,4 +1,4 @@
-﻿using Json.Patch;
+using Json.Patch;
 using k8s;
 using k8s.Models;
 using System.Net;
@@ -55,14 +55,14 @@ var request = new V1CertificateSigningRequest
     }
 };
 
-await client.CertificatesV1.CreateCertificateSigningRequestAsync(request);
+await client.CertificatesV1.CreateCertificateSigningRequestAsync(request).ConfigureAwait(false);
 
 var serializeOptions = new JsonSerializerOptions
 {
     PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
     WriteIndented = true
 };
-var readCert = await client.CertificatesV1.ReadCertificateSigningRequestAsync(name);
+var readCert = await client.CertificatesV1.ReadCertificateSigningRequestAsync(name).ConfigureAwait(false);
 var old = JsonSerializer.SerializeToDocument(readCert, serializeOptions);
 
 var replace = new List<V1CertificateSigningRequestCondition>
@@ -74,4 +74,4 @@ readCert.Status.Conditions = replace;
 var expected = JsonSerializer.SerializeToDocument(readCert, serializeOptions);
 
 var patch = old.CreatePatch(expected);
-await client.CertificatesV1.PatchCertificateSigningRequestApprovalAsync(new V1Patch(patch, V1Patch.PatchType.JsonPatch), name);
+await client.CertificatesV1.PatchCertificateSigningRequestApprovalAsync(new V1Patch(patch, V1Patch.PatchType.JsonPatch), name).ConfigureAwait(false);

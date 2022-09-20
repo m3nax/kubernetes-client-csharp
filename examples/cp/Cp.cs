@@ -1,4 +1,4 @@
-﻿using ICSharpCode.SharpZipLib.Tar;
+using ICSharpCode.SharpZipLib.Tar;
 using k8s;
 using System;
 using System.IO;
@@ -22,7 +22,7 @@ namespace cp
             var pods = client.CoreV1.ListNamespacedPod("default", null, null, null, $"job-name=upload-demo");
             var pod = pods.Items.First();
 
-            await CopyFileToPodAsync(pod.Metadata.Name, "default", "upload-demo", args[0], $"home/{args[1]}");
+            await CopyFileToPodAsync(pod.Metadata.Name, "default", "upload-demo", args[0], $"home/{args[1]}").ConfigureAwait(false);
 
         }
 
@@ -67,14 +67,14 @@ namespace cp
                             entry.Size = fileSize;
 
                             tarOutputStream.PutNextEntry(entry);
-                            await inputFileStream.CopyToAsync(tarOutputStream);
+                            await inputFileStream.CopyToAsync(tarOutputStream).ConfigureAwait(false);
                             tarOutputStream.CloseEntry();
                         }
 
                         memoryStream.Position = 0;
 
-                        await memoryStream.CopyToAsync(stdIn);
-                        await stdIn.FlushAsync();
+                        await memoryStream.CopyToAsync(stdIn).ConfigureAwait(false);
+                        await stdIn.FlushAsync().ConfigureAwait(false);
                     }
 
                 }
@@ -86,7 +86,7 @@ namespace cp
                 using StreamReader streamReader = new StreamReader(stdError);
                 while (streamReader.EndOfStream == false)
                 {
-                    string error = await streamReader.ReadToEndAsync();
+                    string error = await streamReader.ReadToEndAsync().ConfigureAwait(false);
                     throw new IOException($"Copy command failed: {error}");
                 }
             });
@@ -100,7 +100,7 @@ namespace cp
                 new string[] { "sh", "-c", $"tar xmf - -C {destinationFolder}" },
                 false,
                 handler,
-                cancellationToken);
+                cancellationToken).ConfigureAwait(false);
         }
 
 

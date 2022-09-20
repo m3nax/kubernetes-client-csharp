@@ -1,5 +1,4 @@
 using k8s;
-using k8s.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -15,7 +14,7 @@ namespace yaml
             typeMap.Add("v1/Service", typeof(V1Service));
             typeMap.Add("apps/v1/Deployment", typeof(V1Deployment));
 
-            var objects = await KubernetesYaml.LoadAllFromFileAsync(args[0], typeMap);
+            var objects = await KubernetesYaml.LoadAllFromFileAsync(args[0], typeMap).ConfigureAwait(false);
 
             foreach (var obj in objects)
             {
