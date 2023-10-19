@@ -39,18 +39,26 @@ jobs:
     - name: Build
       run: dotnet build
 
-    - uses: nunit/docfx-action@v2.10.0
-      name: Build Documentation
-      with:
-        args: doc/docfx.json
+    - name: Setup docfx
+      run: |
+        dotnet tool install --global docfx --version 2.67.0
+        docfx -v
+
+    - name: Build
+      run: dotnet build
+
+    - name: Generate Documentation
+      run:  docfx doc/docfx.json -o:doc/_site
 
     - name: Setup Pages
       uses: actions/configure-pages@v3
+      
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v2
       with:
         # Upload entire repository
         path: doc/_site
+        
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v2
