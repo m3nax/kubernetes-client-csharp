@@ -38,7 +38,7 @@ jobs:
           
     - name: Setup docfx
       run: |
-        dotnet tool install --global docfx --version 2.67.0
+        dotnet tool install --global docfx --version 2.71.1
         docfx -v
 
     - name: Build
