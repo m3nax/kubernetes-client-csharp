@@ -35,10 +35,7 @@ jobs:
         dotnet-version: |
           6.0.x
           7.0.x
-
-    - name: Build
-      run: dotnet build
-
+          
     - name: Setup docfx
       run: |
         dotnet tool install --global docfx --version 2.67.0
